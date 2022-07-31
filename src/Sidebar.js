@@ -15,7 +15,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 function Sidebar() {
   return (
     <div className="sidebar">
-      <Button className="sidebar__compose" startIcon={<AddIcon />} >Schreiben</Button>
+      <Button className="sidebar__compose" startIcon={<img src='https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png' alt="gmail plus sign" className="sidebar__composeSign"/>} >Schreiben</Button>
       
       <SidebarOption Icon={InboxIcon} title="Posteingang" number={54} selected={true}/>
 
