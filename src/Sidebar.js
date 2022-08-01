@@ -1,6 +1,5 @@
 import "./Sidebar.css"
 import React from 'react'
-import AddIcon from '@mui/icons-material/Add';
 import { Button } from '@mui/material';
 import SidebarOption from "./SidebarOption";
 import InboxIcon from '@mui/icons-material/Inbox';
@@ -10,12 +9,16 @@ import LabelImportant from "@mui/icons-material/LabelImportant";
 import SendIcon from '@mui/icons-material/Send';
 import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import {useDispatch} from "react-redux";
+import { openSendMessage } from "./features/mailSlice";
 
 function Sidebar() {
+
+  const dispatch = useDispatch();
+
   return (
     <div className="sidebar">
-      <Button className="sidebar__compose" startIcon={<img src='https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png' alt="gmail plus sign" className="sidebar__composeSign"/>} >Schreiben</Button>
+      <Button className="sidebar__compose" startIcon={<img src='https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png' alt="gmail plus sign" className="sidebar__composeSign"/>} onClick={()=>dispatch(openSendMessage())}>Schreiben</Button>
       
       <SidebarOption Icon={InboxIcon} title="Posteingang" number={54} selected={true}/>
 
